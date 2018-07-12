@@ -2,6 +2,10 @@ function merge(a,b)
 {
 	return a+ " " + b;
 }
+function echo(a)
+{
+	return a;
+}
 function JsonItem(jsonString,key)
 { 
   return JSON.stringify(JSON.parse(jsonString)[key]);
