@@ -101,5 +101,5 @@ catch(e){throw new SyntaxError("jsonPath: "+e.message+": "+x.replace(/@/g,"_v").
 
 function JsPath(jsonString,key)
 { 
-  return jsonPath(jsonString, key);
+  return jsonPath(JSON.parse(jsonString), key);
 }
