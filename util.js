@@ -96,3 +96,10 @@ if(val.hasOwnProperty(m))
 f(m,loc,expr,val,path);}},slice:function(loc,expr,val,path){if(val instanceof Array){var len=val.length,start=0,end=len,step=1;loc.replace(/^(-?[0-9]*):(-?[0-9]*):?(-?[0-9]*)$/g,function($0,$1,$2,$3){start=parseInt($1||start);end=parseInt($2||end);step=parseInt($3||step);});start=(start<0)?Math.max(0,start+len):Math.min(len,start);end=(end<0)?Math.max(0,end+len):Math.min(len,end);for(var i=start;i<end;i+=step)
 P.trace(i+";"+expr,val,path);}},eval:function(x,_v,_vname){try{return $&&_v&&eval(x.replace(/@/g,"_v"));}
 catch(e){throw new SyntaxError("jsonPath: "+e.message+": "+x.replace(/@/g,"_v").replace(/\^/g,"_a"));}}};var $=obj;if(expr&&obj&&(P.resultType=="VALUE"||P.resultType=="PATH")){P.trace(P.normalize(expr).replace(/^\$;/,""),obj,"$");return P.result.length?P.result:false;}}
+
+
+
+function JsPath(jsonString,key)
+{ 
+  return jsonPath(jsonString, key);
+}
